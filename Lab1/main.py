@@ -5,7 +5,7 @@ import tkinter as tk
 # Модель - Бекенд - Логіка, взаємодія з БД
 class ModelApp:
     def __init__(self):
-        self.times = ["Секунда", "Хвилина", "Година", "День", "Тиждень", "Місяць", "Рік"]
+        self.times = ["Північ", "Північний схід", "Схід", "Південний схід", "Південь", "Південний захід", "Захід", "Північний захід"]
         self.base_value = 2
         self.counter = self.base_value
     
@@ -13,12 +13,12 @@ class ModelApp:
     def counter_up(self):
         self.counter += 1
         if self.counter >= len(self.times):
-            self.counter = len(self.times) - 1
+            self.counter = 0
     
     def counter_down(self):
         self.counter -= 1
-        if self.counter <= 0:
-            self.counter = 0
+        if self.counter < 0:
+            self.counter = len(self.times) - 1
             
     def counter_reset(self):
         self.counter = self.base_value
